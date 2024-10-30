@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Delete, Param, Patch, UploadedFiles } from '@nestjs/common';
+import { Controller, Get, Post, Body, Delete, Param, Patch } from '@nestjs/common';
 import {TasksService} from './tasks.service'
 import { CreateTaskDto, UpdateTaskDto } from 'src/dto/tasks.dto';
 

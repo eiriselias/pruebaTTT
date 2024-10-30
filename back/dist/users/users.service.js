@@ -8,18 +8,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersService = void 0;
 const common_1 = require("@nestjs/common");
+const uuid_1 = require("uuid");
 let UsersService = class UsersService {
     constructor() {
         this.users = [
             {
-                userId: "1",
+                userId: (0, uuid_1.v4)(),
                 userName: "admin",
-                userPassword: "admin1"
+                userPassword: "admin1",
+                tasks: []
             }
         ];
     }
     async findOne(userName) {
         return this.users.find(user => user.userName === userName);
+    }
+    createUser(user) {
+        const newUser = {
+            userId: (0, uuid_1.v4)(),
+            userName: user.userName,
+            userPassword: user.userPassword,
+            tasks: user.tasks
+        };
+        this.users.push(newUser);
     }
 };
 exports.UsersService = UsersService;
