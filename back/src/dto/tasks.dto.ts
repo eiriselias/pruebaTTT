@@ -1,13 +1,33 @@
-import { tasksStatus } from "src/tasks/tasks.entity"
+import { IsString, IsOptional, IsEnum, IsNotEmpty, MinLength } from 'class-validator';
+import { tasksStatus } from "src/tasks/tasks.entity";
 
-export class createTaskDto {
-    title: string
-    description: string
+export class CreateTaskDto {
+    @IsString()
+    @IsNotEmpty()
+    @MinLength(3)
+    title: string;
+
+    @IsString()
+    @IsNotEmpty()
+    @MinLength(3)
+    description: string;
 }
 
-export class updateTaskDto{
-    title?: string
-    description?: string
-    status?: tasksStatus
-    dateFinish?: Date
+export class UpdateTaskDto {
+    @IsOptional()
+    @IsString()
+    @MinLength(3)
+    title?: string;
+
+    @IsOptional()
+    @IsString()
+    @MinLength(3)
+    description?: string;
+
+    @IsOptional()
+    @IsEnum(tasksStatus)
+    status?: tasksStatus;
+
+    @IsOptional()
+    dateFinish?: Date;
 }
