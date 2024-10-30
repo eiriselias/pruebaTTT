@@ -44,7 +44,7 @@ __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [tasks_dto_1.createTaskDto]),
+    __metadata("design:paramtypes", [tasks_dto_1.CreateTaskDto]),
     __metadata("design:returntype", void 0)
 ], TasksController.prototype, "createTask", null);
 __decorate([
@@ -59,7 +59,7 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, tasks_dto_1.updateTaskDto]),
+    __metadata("design:paramtypes", [String, tasks_dto_1.UpdateTaskDto]),
     __metadata("design:returntype", void 0)
 ], TasksController.prototype, "updateTask", null);
 exports.TasksController = TasksController = __decorate([

@@ -1,5 +1,5 @@
 import { Tasks, tasksStatus } from './tasks.entity';
-import { updateTaskDto } from 'src/dto/tasks.dto';
+import { UpdateTaskDto } from 'src/dto/tasks.dto';
 export declare class TasksService {
     private tasks;
     getAllTasks(): Tasks[];
@@ -11,6 +11,6 @@ export declare class TasksService {
         status: tasksStatus;
         dateFinish: Date;
     };
-    updateTask(id: string, updateFields: updateTaskDto): Tasks;
+    updateTask(id: string, updateFields: UpdateTaskDto): Tasks;
     deleteTask(id: string): void;
 }

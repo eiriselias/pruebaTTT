@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Delete, Param, Patch, UploadedFiles } from '@nestjs/common';
 import {TasksService} from './tasks.service'
-import { createTaskDto, updateTaskDto } from 'src/dto/tasks.dto';
+import { CreateTaskDto, UpdateTaskDto } from 'src/dto/tasks.dto';
 
 @Controller('tasks')
 export class TasksController {
@@ -12,7 +12,7 @@ export class TasksController {
     }
 
     @Post()
-    createTask(@Body() newTask: createTaskDto){
+    createTask(@Body() newTask: CreateTaskDto){
         return this.tasksService.createTask(newTask.title, newTask.description)
     }
 
@@ -22,7 +22,7 @@ export class TasksController {
     }
 
     @Patch(':id')
-    updateTask(@Param('id') id:string, @Body() updateFiles: updateTaskDto){
+    updateTask(@Param('id') id:string, @Body() updateFiles: UpdateTaskDto){
        return this.tasksService.updateTask(id, updateFiles)
     }
 }

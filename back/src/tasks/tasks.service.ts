@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Tasks, tasksStatus } from './tasks.entity';
 import { v4 } from 'uuid'
-import { updateTaskDto } from 'src/dto/tasks.dto';
+import { UpdateTaskDto } from 'src/dto/tasks.dto';
 
 @Injectable()
 export class TasksService {
@@ -36,7 +36,7 @@ export class TasksService {
         return newTask
     }
 
-    updateTask(id: string, updateFields: updateTaskDto): Tasks{
+    updateTask(id: string, updateFields: UpdateTaskDto ): Tasks{
         const task = this.getTaskById(id)
         const newTask = Object.assign(task, updateFields)
         this.tasks = this.tasks.map(task => task.id === id ? newTask : task)

@@ -1,10 +1,10 @@
 import { TasksService } from './tasks.service';
-import { createTaskDto, updateTaskDto } from 'src/dto/tasks.dto';
+import { CreateTaskDto, UpdateTaskDto } from 'src/dto/tasks.dto';
 export declare class TasksController {
     private tasksService;
     constructor(tasksService: TasksService);
     getAllTasks(): import("./tasks.entity").Tasks[];
-    createTask(newTask: createTaskDto): {
+    createTask(newTask: CreateTaskDto): {
         id: string;
         title: string;
         description: string;
@@ -12,5 +12,5 @@ export declare class TasksController {
         dateFinish: Date;
     };
     deleteTask(id: string): void;
-    updateTask(id: string, updateFiles: updateTaskDto): import("./tasks.entity").Tasks;
+    updateTask(id: string, updateFiles: UpdateTaskDto): import("./tasks.entity").Tasks;
 }
